@@ -6,10 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+// @Configuration // указывает Spring что в этом классе прописываются настройки банов
+@ComponentScan(basePackages = {"library"})
 public class LibraryConfig {
 
-    @Bean
+    @Bean // данный объект передан спрингу как бин
     public LibraryServiceTwo libraryServiceTwo(){
         return new LibraryServiceTwo();
     }

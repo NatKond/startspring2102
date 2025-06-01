@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 //@Service
 //@Lazy
 //@Scope("prototype")
-@Component("One")
+@Component("libraryServiceOne")
 public class LibraryServiceTwo {
 
     @PostConstruct

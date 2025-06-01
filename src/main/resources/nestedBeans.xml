@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--Инструкция для Spring по созданию бинов -->
+
+    <!--   3 создаст Spring, поскольку зависит от libraryService-->
+    <bean id="libraryController" class="library.controller.LibraryController">
+        <constructor-arg ref="libraryService"/>
+    </bean>
+
+    <!--   2 создаст Spring, поскольку зависит от libraryStorage-->
+    <bean id="libraryService" class="library.service.LibraryService">
+        <constructor-arg ref="libraryStorage"/>
+    </bean>
+
+    <!--   1 создаст Spring -->
+    <bean id="libraryStorage" class="library.repository.LibraryStorage"/>
+</beans>

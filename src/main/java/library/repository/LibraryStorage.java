@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 public class LibraryStorage {
 
     public Book getBook(){
-        return new Book("Hello book");
+        return new Book("New book 1");
     }
 }
