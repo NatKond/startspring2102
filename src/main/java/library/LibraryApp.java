@@ -97,6 +97,5 @@ public class LibraryApp {
         count[0] = 1;
         Arrays.stream(beanDefinitionNames3).forEach(name -> System.out.println("Bean " + count[0]++ + " : " + name));
 
-//        controller.start();
     }
 }

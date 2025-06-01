@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = {"library"})
 public class LibraryConfig {
 
-    @Bean // данный объект передан спрингу как бин
+    @Bean("serviceTwo") // данный объект передан спрингу как бин
     public LibraryServiceTwo libraryServiceTwo(){
         return new LibraryServiceTwo();
     }
