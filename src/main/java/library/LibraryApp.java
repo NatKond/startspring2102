@@ -6,7 +6,6 @@ import library.repository.LibraryStorage;
 import library.service.LibraryService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Arrays;
@@ -42,7 +41,7 @@ import java.util.Arrays;
  * @Configuration - указывает спиригу, что у этом классе прописываются настройки бинов
  * внутри аннотации @Configuration находится @Component
  *
- * 3. Java config - конфигурация только на Java классах и аннотациях, без xml
+ * 3. Java config - конфигурация только на Java классах и аннотациях, без XML
  * a) Автоматический поиск бинов через сканирование пакетов AnnotationConfigApplicationContext("library")
  * b) Самостоятельное указание файла конфигурации и описание бинов:
  *    класс конфигураций с аннотацией @Configuration и внутри него методы с аннотацийе @Bean
