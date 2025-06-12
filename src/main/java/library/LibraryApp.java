@@ -11,16 +11,25 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Arrays;
 
 /**
- * 2 концепции спринга
- * 1. DI - dependency injection
+ * Spring базируется на двух концепциях: ІоС, DI
+ * 1. IoC - inversion of control - spring берет на себя все работы по созданию,
+ * настройке, связям и удалением объектов
  * Ioc Container - inversion of control container - управление жизненым циклов бинов
- * реализация Ioc Container в Spring - ApplicationContext
+ * реализация Ioc Container виды контейнеров в Spring : BeanFactory, ApplicationContext
  *
- * 2. IoC - inversion of control
+ * 2. DI - dependency injection - предоставления объектов тогда когда нам нужно
+ * и там где нам нужно
  * Dependency injection - внедрение бинов
  * 1) Inject By Field
  * 2) Construction injection
  * 3) Setter injection
+ *
+ * Когда это делает Spring - new LibraryStorage() - то этот объект называется
+ * spring bean или просто bean - бин это объект, жизненный цикл которого
+ * полностью управляется слингом (создание, настройка, удаление)
+ *
+ * По умолчанию scope объекта - singleton - объект существует в единственном виде
+ * IoC container похож на HashMap: key -> bean name (id), value -> new SomeBean () SomeBean.class.getInstance()
  *
  * Виды конфигураций Spring
  * 1. XML config - XML конфигурация (надо прописывать бины в файле настроек)
@@ -72,7 +81,7 @@ public class LibraryApp {
         Arrays.stream(beanDefinitionNames1).forEach(name -> System.out.println("Bean " + count[0]++ + " : " + name));
 
         // 2. XML конфигурация Spring с Java аннотациями
-        System.out.println("------- Context Annotation Configuration-------");
+        System.out.println("------- Context Annotation Configuration -------");
         ApplicationContext context2 =
                 new ClassPathXmlApplicationContext("annotationBeans.xml");
 
